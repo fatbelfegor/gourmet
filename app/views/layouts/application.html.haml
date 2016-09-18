@@ -1,0 +1,31 @@
+!!! 5
+%html
+	%head
+		%title Cook Book
+		= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
+		= javascript_include_tag 'application', 'data-turbolinks-track' => true
+		= csrf_meta_tags
+
+		%link{ rel: "stylesheet", type: "text/css", href: "https://fonts.googleapis.com/css?family=Marmelad&subset=cyrillic" }
+		%link{ rel: "stylesheet", type: "text/css", href: "https://fonts.googleapis.com/css?family=Josefin+Slab:100,300,400,600,700,100italic,300italic,400italic,600italic,700italic" }
+
+	%body
+		%nav.navbar.navbar-default
+			.container
+				.navbar-brand= link_to "Cook Book", root_path
+
+				- if user_signed_in?
+					%ul.nav.navbar-nav.navbar-right
+						%li= link_to "Новый рецепт", new_recipe_path
+						%li= link_to "Выйти", destroy_user_session_path, method: :delete
+						%li= link_to current_user.username
+				- else
+					%ul.nav.navbar-nav.navbar-right
+						%li= link_to "Регистрация", new_user_registration_path
+						%li= link_to "Войти", new_user_session_path
+
+		.container
+			- flash.each do |name, msg|
+				= content_tag :div, msg, class: "alert"
+
+			= yield

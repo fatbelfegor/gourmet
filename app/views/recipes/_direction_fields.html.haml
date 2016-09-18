@@ -1,0 +1,4 @@
+.form-inline.clearfix
+	.nested-fields
+		= f.input :step, input_html: { class: 'form-input form-control' }
+		= link_to_remove_association "Удалить", f, class: "btn btn-default form-button"
