@@ -16,6 +16,8 @@ gem 'cocoon'
 gem 'devise'
 gem 'aws-sdk'
 gem 'sdoc', group: :doc
+gem 'friendly_id'
+gem 'babosa'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

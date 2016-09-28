@@ -56,6 +56,7 @@ GEM
       jmespath (~> 1.0)
     aws-sdk-resources (2.3.21)
       aws-sdk-core (= 2.3.21)
+    babosa (1.0.2)
     bcrypt (3.1.11)
     bootstrap-sass (3.3.6)
       autoprefixer-rails (>= 5.2.1)
@@ -85,6 +86,8 @@ GEM
     erubis (2.7.0)
     execjs (2.7.0)
     ffi (1.9.13)
+    friendly_id (5.1.0)
+      activerecord (>= 4.0.0)
     globalid (0.3.6)
       activesupport (>= 4.1.0)
     haml (4.0.7)
@@ -215,11 +218,13 @@ PLATFORMS
 
 DEPENDENCIES
   aws-sdk
+  babosa
   bootstrap-sass
   byebug
   cocoon
   coffee-rails (~> 4.2)
   devise
+  friendly_id
   haml
   jbuilder (~> 2.5)
   jquery-rails
