@@ -47,15 +47,11 @@ GEM
       i18n (~> 0.7)
       minitest (~> 5.1)
       tzinfo (~> 1.1)
+    airbrussh (1.1.2)
+      sshkit (>= 1.6.1, != 1.7.0)
     arel (7.0.0)
     autoprefixer-rails (6.3.7)
       execjs
-    aws-sdk (2.3.21)
-      aws-sdk-resources (= 2.3.21)
-    aws-sdk-core (2.3.21)
-      jmespath (~> 1.0)
-    aws-sdk-resources (2.3.21)
-      aws-sdk-core (= 2.3.21)
     babosa (1.0.2)
     bcrypt (3.1.11)
     bootstrap-sass (3.3.6)
@@ -63,6 +59,24 @@ GEM
       sass (>= 3.3.4)
     builder (3.2.2)
     byebug (9.0.5)
+    capistrano (3.8.0)
+      airbrussh (>= 1.0.0)
+      i18n
+      rake (>= 10.0.0)
+      sshkit (>= 1.9.0)
+    capistrano-bundler (1.2.0)
+      capistrano (~> 3.1)
+      sshkit (~> 1.2)
+    capistrano-rails (1.2.3)
+      capistrano (~> 3.1)
+      capistrano-bundler (~> 1.1)
+    capistrano-rvm (0.1.2)
+      capistrano (~> 3.0)
+      sshkit (~> 1.2)
+    capistrano3-puma (3.1.0)
+      capistrano (~> 3.7)
+      capistrano-bundler
+      puma (~> 3.4)
     climate_control (0.0.3)
       activesupport (>= 3.0)
     cocaine (0.5.8)
@@ -76,7 +90,6 @@ GEM
       execjs
     coffee-script-source (1.10.0)
     concurrent-ruby (1.0.2)
-    debug_inspector (0.0.2)
     devise (4.2.0)
       bcrypt (~> 3.0)
       orm_adapter (~> 0.1)
@@ -96,7 +109,6 @@ GEM
     jbuilder (2.5.0)
       activesupport (>= 3.0.0, < 5.1)
       multi_json (~> 1.2)
-    jmespath (1.3.0)
     jquery-rails (4.1.1)
       rails-dom-testing (>= 1, < 3)
       railties (>= 4.2.0)
@@ -117,6 +129,9 @@ GEM
     mini_portile2 (2.1.0)
     minitest (5.9.0)
     multi_json (1.12.1)
+    net-scp (1.2.1)
+      net-ssh (>= 2.6.5)
+    net-ssh (4.1.0)
     nio4r (1.2.1)
     nokogiri (1.6.8)
       mini_portile2 (~> 2.1.0)
@@ -151,11 +166,6 @@ GEM
       nokogiri (~> 1.6.0)
     rails-html-sanitizer (1.0.3)
       loofah (~> 2.0)
-    rails_12factor (0.0.3)
-      rails_serve_static_assets
-      rails_stdout_logging
-    rails_serve_static_assets (0.0.5)
-    rails_stdout_logging (0.0.5)
     railties (5.0.0)
       actionpack (= 5.0.0)
       activesupport (= 5.0.0)
@@ -170,6 +180,8 @@ GEM
       json (~> 1.4)
     responders (2.2.0)
       railties (>= 4.2.0, < 5.1)
+    rollbar (2.14.1)
+      multi_json
     sass (3.4.22)
     sass-rails (5.0.5)
       railties (>= 4.0.0, < 6)
@@ -192,6 +204,9 @@ GEM
       activesupport (>= 4.0)
       sprockets (>= 3.0.0)
     sqlite3 (1.3.11)
+    sshkit (1.13.1)
+      net-scp (>= 1.1.2)
+      net-ssh (>= 2.8.0)
     thor (0.19.1)
     thread_safe (0.3.5)
     tilt (2.0.5)
@@ -204,46 +219,45 @@ GEM
       execjs (>= 0.3.0, < 3)
     warden (1.2.6)
       rack (>= 1.0)
-    web-console (3.3.1)
-      actionview (>= 5.0)
-      activemodel (>= 5.0)
-      debug_inspector
-      railties (>= 5.0)
     websocket-driver (0.6.4)
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.2)
+    will_paginate (3.1.3)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
-  aws-sdk
   babosa
   bootstrap-sass
   byebug
+  capistrano
+  capistrano-bundler
+  capistrano-rails
+  capistrano-rvm
+  capistrano3-puma
   cocoon
-  coffee-rails (~> 4.2)
+  coffee-rails
   devise
   friendly_id
   haml
-  jbuilder (~> 2.5)
+  jbuilder
   jquery-rails
-  listen (~> 3.0.5)
+  listen
   paperclip
   pg
-  puma (~> 3.0)
-  rails (~> 5.0.0)
-  rails_12factor
-  sass-rails (~> 5.0)
+  puma
+  rails
+  rollbar
+  sass-rails
   sdoc
   simple_form!
   spring
-  spring-watcher-listen (~> 2.0.0)
+  spring-watcher-listen
   sqlite3
-  turbolinks (~> 5)
-  tzinfo-data
-  uglifier (>= 1.3.0)
-  web-console
+  turbolinks
+  uglifier
+  will_paginate
 
 BUNDLED WITH
    1.12.5

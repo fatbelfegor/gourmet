@@ -7,3 +7,5 @@
 						= link_to recipe do
 							= image_tag recipe.image.url(:medium)
 					%h2= link_to recipe.title, recipe
+.digg_pagination
+	= will_paginate @recipe, previous_label: "назад", next_label: "вперед"
