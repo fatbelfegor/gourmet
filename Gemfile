@@ -19,7 +19,7 @@ gem 'friendly_id'
 gem 'babosa'
 gem 'will_paginate'
 # Integrate Rollbar.com Dashboard.
-gem 'rollbar'
+#gem 'rollbar'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
