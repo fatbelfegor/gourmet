@@ -2,15 +2,15 @@
 lock "3.8.0"
 
 set :application, "gourmet"
-set :repo_url, "git@github.com:fatbelfegor/basecamp3-rails-chatbot.git"
+set :repo_url, "git@github.com:fatbelfegor/gourmet.git"
 set :branch, :master
-set :deploy_to, '/home/deploy/basecamp3-rails-chatbot'
+set :deploy_to, '/home/deploy/gourmet'
 set :pty, true
-set :linked_files, %w{config/application.yml}
+set :linked_files, %w{config/database.yml config/application.yml}
 set :linked_dirs, %w{bin log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system public/uploads}
-set :keep_releases, 5
+set :keep_releases, 3
 set :rvm_type, :user
-set :rvm_ruby_version, 'ruby-2.3.1' # Edit this if you are using MRI Ruby
+set :rvm_ruby_version, 'ruby-2.3.0' # Edit this if you are using MRI Ruby
 set :puma_rackup, -> { File.join(current_path, 'config.ru') }
 set :puma_state, "#{shared_path}/tmp/pids/puma.state"
 set :puma_pid, "#{shared_path}/tmp/pids/puma.pid"
@@ -28,19 +28,6 @@ set :puma_worker_timeout, nil
 set :puma_init_active_record, false
 set :puma_preload_app, true
 
-
-
-namespace :puma do
-  desc 'Create Directories for Puma Pids and Socket'
-  task :make_dirs do
-    on roles(:app) do
-      execute "mkdir #{shared_path}/tmp/sockets -p"
-      execute "mkdir #{shared_path}/tmp/pids -p"
-    end
-  end
-
-  before :start, :make_dirs
-end
 
 namespace :deploy do
   desc 'Initial Deploy'
@@ -60,6 +47,5 @@ namespace :deploy do
 
   after  :finishing,    :compile_assets
   after  :finishing,    :cleanup
-  #after  :finishing,    :restart
 end
 
