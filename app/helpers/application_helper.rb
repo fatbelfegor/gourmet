@@ -11,7 +11,7 @@ module ApplicationHelper
     return { error: error.to_s }
   end
 
-  def send_message(basecampbot_url, message)
+  def send_message(message)
     basecampbot_url ||= Rails.configuration.service['basecampbot_url']
     HTTParty.post basecampbot_url, query: { content: message }
   end

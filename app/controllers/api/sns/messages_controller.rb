@@ -16,7 +16,7 @@ class Api::Sns::MessagesController < ApplicationController
     end
 
     # send message to basecamp
-    helpers.send_message(command_params[:callback_url], message)
+    helpers.send_message( message)
   end
 
   private
