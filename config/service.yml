@@ -1,6 +1,6 @@
 # Add this file to .gitignore right now !!!
 default: &default
-  basecampbot_url: https://6.basecamp.com/3777700178/integrations/3gtJyB89KVQHvrQN2h7FitRJSK/buckets/30997353/chats/43907772399/lines
+  basecampbot_url: https://3.basecamp.com/3700178/integrations/3gtJyBKVQHvrQN2h7FitRJSK/buckets/3097353/chats/437772399/lines
   snstopic_arn: arn:aws:sns:us-west-2:230306836787:bascamp_chatbot
   # Path to the .yml file that contains 'aws_access_key' and 'aws_secret_key'. Delete it, if you are using Amazon EC2 hosting
   #aws_secret_file: /home/klim/aws.yml 
@@ -15,3 +15,4 @@ test:
 
 production:
   <<: *default
+  
