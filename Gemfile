@@ -18,6 +18,9 @@ gem 'sdoc', group: :doc
 gem 'friendly_id'
 gem 'babosa'
 gem 'will_paginate'
+gem 'aws-sdk', '~> 2'
+gem 'httparty'
+
 # Integrate Rollbar.com Dashboard.
 #gem 'rollbar'
 

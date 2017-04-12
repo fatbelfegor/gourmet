@@ -5,4 +5,10 @@ Rails.application.routes.draw do
 
   root 'recipes#index'
 
+  namespace :api, defaults: {format: :json} do
+    namespace :sns do
+      resources :messages, only: :create
+    end
+  end
+
 end
