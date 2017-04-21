@@ -8,7 +8,6 @@ if aws_secret_file.nil?
    #region: aws_region,
    #credentials: credentials
   #})
-  return :true
 else
 	creds = YAML.load(File.read(aws_secret_file))
 	aws_creds = Aws::Credentials.new(
