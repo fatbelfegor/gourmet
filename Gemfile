@@ -20,6 +20,7 @@ gem 'babosa'
 gem 'will_paginate'
 gem 'aws-sdk', '~> 2'
 gem 'httparty'
+gem 'ckeditor'
 
 # Integrate Rollbar.com Dashboard.
 #gem 'rollbar'
@@ -29,6 +30,14 @@ group :development, :test do
   gem 'byebug', platform: :mri
   gem 'sqlite3'
 end
+
+group :test do
+  
+  gem 'minitest-reporters'
+  gem 'mini_backtrace'
+  gem 'guard-minitest'
+end
+
 
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.

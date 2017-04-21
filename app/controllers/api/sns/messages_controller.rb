@@ -4,7 +4,8 @@ class Api::Sns::MessagesController < ApplicationController
   def create
     amazon_sns_request = helpers.parse_webhook
     snstopic_arn = Rails.configuration.service['snstopic_arn']
-    client = helpers.aws_config
+    #client = helpers.aws_config
+    client = Aws::SNS::Client.new(region: 'us-west-2')
 
     if amazon_sns_request['Type'].to_s.casecmp('SubscriptionConfirmation') >= 0
       client.confirm_subscription(

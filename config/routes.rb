@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
-	
+
   devise_for :users
   resources :recipes
+
+  mount Ckeditor::Engine => '/ckeditor'
 
   root 'recipes#index'
 
